@@ -178,18 +178,6 @@ This public repo does not contain:
 - Admin credentials
 - Private operational files
 
-## Interview Talking Points
-
-This project is useful to discuss for:
-
-- Building a CMS for non-technical users
-- Designing reusable CRUD APIs
-- Implementing signed upload flows
-- Cache invalidation with Next.js tag revalidation
-- Shipping a production website with custom domain and SSL
-- Performance tuning and Lighthouse optimization
-- Handling real stakeholder feedback and scope creep
-
 ## Live Demo
 
 Visit the production site: https://rrworld.org
