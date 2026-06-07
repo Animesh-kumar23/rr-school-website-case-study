@@ -32,7 +32,7 @@ The final system is live at **rrworld.org** and supports day-to-day content upda
 | Database | MongoDB Atlas, Mongoose |
 | Auth | NextAuth credentials provider, bcrypt password hashing |
 | Media | Cloudinary signed uploads |
-| Deployment | Vercel, Cloudflare DNS, custom domain, SSL |
+| Deployment | Netlify, Cloudflare DNS, custom domain, SSL |
 | SEO/Analytics | Sitemap, robots.txt, OpenGraph metadata, Google Analytics 4, Search Console |
 
 ## Results
@@ -40,7 +40,7 @@ The final system is live at **rrworld.org** and supports day-to-day content upda
 | Metric | Result |
 |---|---|
 | Desktop Lighthouse | 100 Performance, 100 Accessibility, 100 Best Practices, 100 SEO |
-| Mobile Lighthouse | 94 Performance, 100 Accessibility, 100 Best Practices, 100 SEO in the captured run |
+| Mobile Lighthouse | 95 Performance, 100 Accessibility, 100 Best Practices, 100 SEO in the captured run |
 | Content freshness | Admin edits go live in about 1 second without redeploys |
 | CMS coverage | News, events, notices, gallery, faculty, settings, founder message, submissions |
 | Deployment | Live production site with custom domain and SSL |
@@ -100,7 +100,7 @@ This kept the admin backend consistent across news, events, notices, gallery, an
 
 ### 4. Fast content updates with tag-based revalidation
 
-Public pages use a cached query layer with Next.js `unstable_cache`. When admins save changes, the API calls tag-based revalidation so the public site updates quickly without requiring a Vercel redeploy.
+Public pages use a cached query layer with Next.js `unstable_cache`. When admins save changes, the API calls tag-based revalidation so the public site updates quickly without requiring a Netlify redeploy.
 
 Example flow:
 
