@@ -8,7 +8,7 @@ Repository: Private client source code, public case study only
 
 RR International School & Hostel needed a production website that school staff could update without depending on a developer for every notice, event, photo, or content change.
 
-I built and deployed a bilingual school website with a self-service CMS, admin authentication, database-driven content, secure media uploads, SEO basics, analytics, custom domain setup, and handover documentation.
+I built and deployed a bilingual school website with a self-service CMS, admin authentication, database-driven content, secure media uploads, SEO basics, analytics, custom domain setup, and handover documentation. The production deployment now runs on Netlify with Cloudflare DNS for the custom domain.
 
 The final system is live at **rrworld.org** and supports day-to-day content updates through an admin dashboard.
 
@@ -21,6 +21,7 @@ The final system is live at **rrworld.org** and supports day-to-day content upda
 - Secure image upload flow using signed Cloudinary uploads
 - Contact enquiry flow with database persistence and optional email notification
 - SEO and production launch setup: metadata, OpenGraph, sitemap, robots.txt, GA4, custom domain, and SSL
+- Commercial-safe free hosting migration from Vercel Hobby to Netlify Free with Cloudflare-managed DNS
 - Admin and deployment handover guides for long-term maintainability
 
 ## Tech Stack
@@ -32,7 +33,7 @@ The final system is live at **rrworld.org** and supports day-to-day content upda
 | Database | MongoDB Atlas, Mongoose |
 | Auth | NextAuth credentials provider, bcrypt password hashing |
 | Media | Cloudinary signed uploads |
-| Deployment | Netlify, Cloudflare DNS, custom domain, SSL |
+| Deployment | Netlify Free, Cloudflare DNS, custom domain, SSL |
 | SEO/Analytics | Sitemap, robots.txt, OpenGraph metadata, Google Analytics 4, Search Console |
 
 ## Results
@@ -43,7 +44,7 @@ The final system is live at **rrworld.org** and supports day-to-day content upda
 | Mobile Lighthouse | 95 Performance, 100 Accessibility, 100 Best Practices, 100 SEO in the captured run |
 | Content freshness | Admin edits go live in about 1 second without redeploys |
 | CMS coverage | News, events, notices, gallery, faculty, settings, founder message, submissions |
-| Deployment | Live production site with custom domain and SSL |
+| Deployment | Live production site on Netlify with Cloudflare DNS, custom domain, and SSL |
 
 Note: the included mobile Lighthouse screenshot shows a 94 performance score. Lighthouse scores vary slightly by run and environment.
 
@@ -100,7 +101,7 @@ This kept the admin backend consistent across news, events, notices, gallery, an
 
 ### 4. Fast content updates with tag-based revalidation
 
-Public pages use a cached query layer with Next.js `unstable_cache`. When admins save changes, the API calls tag-based revalidation so the public site updates quickly without requiring a Netlify redeploy.
+Public pages use a cached query layer with Next.js `unstable_cache`. When admins save changes, the API calls tag-based revalidation so the public site updates quickly without requiring a hosting redeploy.
 
 Example flow:
 
@@ -142,7 +143,7 @@ I optimized the production build with:
 - Sitemap and robots.txt
 - Google Analytics 4
 - Google Search Console setup
-- Custom domain and SSL
+- Custom domain and SSL through Cloudflare DNS and Netlify
 
 ## Key Engineering Decisions
 
@@ -178,7 +179,19 @@ This public repo does not contain:
 - Admin credentials
 - Private operational files
 
+## Interview Talking Points
+
+This project is useful to discuss for:
+
+- Building a CMS for non-technical users
+- Designing reusable CRUD APIs
+- Implementing signed upload flows
+- Cache invalidation with Next.js tag revalidation
+- Shipping a production website with custom domain and SSL
+- Migrating a live Next.js site from Vercel Hobby to Netlify Free
+- Performance tuning and Lighthouse optimization
+- Handling real stakeholder feedback and scope creep
+
 ## Live Demo
 
 Visit the production site: https://rrworld.org
-
